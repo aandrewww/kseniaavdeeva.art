@@ -1,0 +1,17 @@
+{
+  "presets": ["babel-preset-gatsby"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "constants": "./src/constants",
+        "containers": "./src/containers",
+        "components": "./src/components",
+        "pages": "./src/pages",
+        "helpers": "./src/helpers",
+        "store": "./src/store",
+        "modules": "./node_modules"
+      }
+    }]
+  ]
+}

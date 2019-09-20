@@ -49,7 +49,7 @@ Bookshelf.propTypes = {
 export default Bookshelf;
 
 export const query = graphql`
-  query BookshelfPage($id: String!) {
+  query BookshelfPage($id: String) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

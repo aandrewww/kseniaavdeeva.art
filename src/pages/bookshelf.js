@@ -6,7 +6,7 @@ import Box from 'components/box/box';
 import Head from 'components/head/head';
 import Content, { HTMLContent } from 'components/content/content';
 
-export const AboutPageTemplate = ({ content, contentComponent }) => {
+export const BookshelfPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
@@ -18,22 +18,22 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
   );
 };
 
-AboutPageTemplate.propTypes = {
+BookshelfPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
   contentComponent: PropTypes.node,
 };
 
-AboutPageTemplate.defaultProps = {
+BookshelfPageTemplate.defaultProps = {
   contentComponent: null,
 };
 
-const About = ({ data }) => {
+const Bookshelf = ({ data }) => {
   const { frontmatter, html } = data.markdownRemark;
 
   return (
     <Layout>
       <Head pageTitle={frontmatter.title} />
-      <AboutPageTemplate
+      <BookshelfPageTemplate
         contentComponent={HTMLContent}
         heading={frontmatter.title}
         content={html}
@@ -42,14 +42,14 @@ const About = ({ data }) => {
   );
 };
 
-About.propTypes = {
+Bookshelf.propTypes = {
   data: PropTypes.shape().isRequired,
 };
 
-export default About;
+export default Bookshelf;
 
 export const query = graphql`
-  query AboutPage($id: String!) {
+  query BookshelfPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

@@ -9,6 +9,9 @@ const Nav = () => (
         <Link to="/about">About</Link>
       </li>
       <li>
+        <Link to="/bookshelf">Bookshelf</Link>
+      </li>
+      <li>
         <a href="https://dribbble.com/ksenia-avdeeva">Dribbble</a>
       </li>
     </ul>

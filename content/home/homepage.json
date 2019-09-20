@@ -1,6 +1,6 @@
 {
   "title": "Home",
-  "content": "intro.md",
+  "content": "index.md",
   "gallery": [{
     "title": "Title 1",
     "copy": "Copy 1",

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BookshelfPageTemplate } from '../../templates/bookshelf-page';
+import { BookshelfPageTemplate } from '../../pages/bookshelf';
 
 const BookshelfPagePreview = ({ entry, widgetFor }) => (
   <BookshelfPageTemplate

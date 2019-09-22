@@ -26,13 +26,13 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "content/bookshelf/index.md"
         label: "Bookshelf"
         name: "bookshelf"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "bookshelf-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "bookshelf"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}

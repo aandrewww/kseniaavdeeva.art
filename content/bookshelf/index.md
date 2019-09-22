@@ -1,5 +1,5 @@
 ---
-templateKey: 'bookshelf-page'
+templateKey: 'bookshelf'
 path: /bookshelf
 title: Bookshelf
 ---

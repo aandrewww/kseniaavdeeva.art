@@ -1,3 +1,11 @@
+development_overrides:
+  # run file-system backend for local development
+  backend:
+    name: file-system
+    api_root: /api
+  # reset 'editorial_workflow' if enabled, since it breaks in file-system mode
+  publish_mode: 'simple'
+
 backend:
   name: git-gateway
   branch: master
@@ -11,6 +19,9 @@ slug:
   clean_accents: true
   # sanitize_replacement: "-" # by default
 
+# config example
+# https://github.com/robertcoopercode/gatsby-netlify-cms/blob/master/static/admin/config.yml
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -19,20 +30,62 @@ collections:
       #   label: "Home"
       #   name: "home"
       #   fields:
-      #     - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index"}
-      #     - {label: "Title", name: "title", widget: "string"}
-      #     - {label: "Body", name: "body", widget: "markdown"}
-      - file: "content/about/index.md"
+      #     - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index" }
+      #     - { label: "Title", name: "title", widget: "string" }
+      #     - { label: "Body", name: "body", widget: "markdown" }
+      - file: "static/content/home/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero text", name: "heroText", widget: "string" }
+      - file: "static/content/about/index.md"
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "content/bookshelf/index.md"
-        label: "Bookshelf"
-        name: "bookshelf"
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "static/content/projects/index.md"
+        label: "Projects"
+        name: "My Projects"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "bookshelf"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "projects-page" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "navbarAndFooter"
+    label: "Navbar & Footer"
+    files:
+      - file: "static/content/navbar/index.md"
+        label: "Navbar"
+        name: "navbar"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "navbar" }
+          - {
+            label: "Menu Items",
+            name: "menuItems",
+            widget: "list",
+            fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Link Type", name: "linkType", widget: "select", options: ["internal", "external"] },
+              { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about) if the link is an internal link." },
+            ]
+          }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "static/content/project"
+    create: true
+    slug: "{{slug}}"
+    # extension: markdown
+    # format: frontmatter
+    fields:
+      - { label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Tags", name: "tags", widget: "list" }

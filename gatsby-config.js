@@ -10,11 +10,12 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-transformer-json',
     'gatsby-transformer-remark',
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/content`,
+        path: `${__dirname}/static/content`,
       },
     },
     {
@@ -44,7 +45,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
+        modulePath: `${__dirname}/src/cms/cms.js`, // default: undefined
+        stylesPath: `${__dirname}/src/cms/cms.css`, // default: undefined
+        enableIdentityWidget: false, // default: true
+        publicPath: 'admin',
+        htmlTitle: 'Content Manager',
+        manualInit: true,
       },
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array

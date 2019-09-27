@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 const path = require('path');
+const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = ({ actions, graphql }) => {
@@ -15,6 +16,8 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              tags
+              path
               templateKey
             }
           }
@@ -28,21 +31,37 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
-    posts.forEach((edge) => {
-      const { id, fields, frontmatter } = edge.node;
-
-      if (frontmatter.templateKey !== null) {
-        createPage({
-          path: fields.slug,
-          // tags: edge.node.frontmatter.tags,
-          component: path.resolve(`src/pages/${String(frontmatter.templateKey)}.js`),
-          // additional data can be passed via context
-          context: {
-            id,
-          },
-        });
+    // Filter out the footer, navbar, and meetups so we don't create pages for those
+    // Filter out the footer, navbar, and meetups so we don't create pages for those
+    const postOrPage = result.data.allMarkdownRemark.edges.filter((edge) => {
+      if (edge.node.frontmatter.templateKey === 'navbar' || edge.node.frontmatter.templateKey === 'footer') {
+        return false;
       }
+
+      return true;
+    });
+
+    postOrPage.forEach((edge) => {
+      const { id, fields, frontmatter } = edge.node;
+      let component;
+      let pathName;
+
+      if (frontmatter.templateKey === 'home-page') {
+        pathName = '/';
+        component = path.resolve('src/pages/index.js');
+      } else {
+        pathName = frontmatter.path || fields.slug;
+        component = path.resolve(`src/templates/${String(frontmatter.templateKey)}.js`);
+      }
+
+      createPage({
+        path: pathName,
+        component,
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      });
     });
 
     // // Tag pages:
@@ -77,7 +96,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // fmImagesToRelative(node); // convert image paths for gatsby images
 
   if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode });
+    const value = createFilePath({ node, getNode, trailingSlash: false });
     createNodeField({
       name: 'slug',
       node,
@@ -94,4 +113,8 @@ exports.onCreateWebpackConfig = ({
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     },
   });
+};
+
+exports.onCreateDevServer = ({ app }) => {
+  fsMiddlewareAPI(app);
 };

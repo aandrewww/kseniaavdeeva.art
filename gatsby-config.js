@@ -6,11 +6,18 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
     'gatsby-transformer-json',
-    'gatsby-transformer-remark',
-    'gatsby-plugin-remove-trailing-slashes',
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/images`,
+        name: 'uploads',
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -26,9 +33,31 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-remark-copy-linked-files',
+      resolve: 'gatsby-transformer-remark',
       options: {
-        destinationDir: 'static',
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 650,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
+        ],
       },
     },
     'gatsby-plugin-sharp',

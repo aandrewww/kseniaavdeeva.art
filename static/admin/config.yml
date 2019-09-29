@@ -64,8 +64,8 @@ collections:
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "navbar" }
           - {
-            label: "Menu Items",
-            name: "menuItems",
+            label: "Navbar Items",
+            name: "navbarItems",
             widget: "list",
             fields: [
               { label: "Label", name: "label", widget: "string" },
@@ -73,6 +73,22 @@ collections:
               { label: "Link URL", name: "linkURL", widget: "string", hint: "Use a relative URL (e.g. /about) if the link is an internal link." },
             ]
           }
+      - file: "static/content/footer/index.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "footer" }
+          - {
+            label: "Social Items",
+            name: "socialItems",
+            widget: "list",
+            fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Social Type", name: "type", widget: "select", options: ["email", "instagram", "linkedin", "dribble", "behance"] },
+              { label: "URL", name: "link", widget: "string" },
+            ]
+          }
+
 
   - name: "projects"
     label: "Projects"

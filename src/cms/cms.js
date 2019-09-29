@@ -5,10 +5,6 @@ import FileSystemBackend from 'netlify-cms-backend-fs';
 import AboutPagePreview from './preview-templates/AboutPagePreview';
 import ProjectsPagePreview from './preview-templates/ProjectsPagePreview';
 
-// const NetlifyCMS = () => {
-//   React.useEffect(() => {
-//     console.log(`CMS [${process.env.NODE_ENV}]`, CMS);
-
 // If running in development
 if (process.env.NODE_ENV === 'development') {
   window.CMS_ENV = 'development_overrides'; // Set the CMS_ENV to the development_ overrides.
@@ -20,9 +16,3 @@ CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('projects', ProjectsPagePreview);
 
 init();
-// });
-
-//   return <div id="nc-root" />;
-// };
-
-// export default NetlifyCMS;

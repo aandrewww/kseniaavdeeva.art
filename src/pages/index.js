@@ -4,8 +4,6 @@ import Layout from 'components/layout/layout';
 import Box from 'components/box/box';
 import Title from 'components/title/title';
 import Projects from 'components/projects/projects';
-import IOExample from 'components/io-example/io-example';
-import Modal from 'containers/modal/modal';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => {
@@ -18,15 +16,10 @@ const Index = ({ data }) => {
         <Title as="h2" size="large">
           { home.heroText }
         </Title>
-        <Modal>
-          test modal
-        </Modal>
       </Box>
       <Projects
         items={projects}
       />
-      <div style={{ height: '50vh' }} />
-      <IOExample />
     </Layout>
   );
 };

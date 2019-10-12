@@ -1,10 +1,21 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
-import Item from 'components/projects/item/item';
-import { Container } from './projects.css';
+import Item from 'components/project-item';
+import { jsx } from 'theme-ui';
 
 const Projects = ({ items }) => (
-  <Container>
+  <div
+    sx={{
+      display: 'grid',
+      gridTemplateColumns: [
+        'repeat(2, 1fr)',
+        'repeat(4, 1fr)',
+      ],
+      gridAutoFlow: 'row',
+      px: 2,
+      py: 4,
+    }}
+  >
     {items.map((item) => {
       const project = item.node;
 
@@ -18,7 +29,7 @@ const Projects = ({ items }) => (
         />
       );
     })}
-  </Container>
+  </div>
 );
 
 Projects.propTypes = {

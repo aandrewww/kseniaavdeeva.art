@@ -1,7 +1,7 @@
 import React from 'react';
-import IO from 'components/io/io';
-import Title from 'components/title/title';
-import { Container } from './io-example.css';
+import IO from 'components/io';
+// import Title from 'components/title/title';
+// import { Container } from './io-example.css';
 
 // <IO> uses a render prop to pass down `isVisible` and `hasBeenVisible`.
 // In this example, we only care about `isVisible` and reset the styles
@@ -10,9 +10,9 @@ import { Container } from './io-example.css';
 const IOExample = () => (
   <IO rootMargin="-50px">
     {({ isVisible }) => (
-      <Container isVisible={isVisible}>
-        <Title tag="span">IntersectionObserver</Title>
-      </Container>
+      <div isVisible={isVisible}>
+        <h3 tag="span">IntersectionObserver</h3>
+      </div>
     )}
   </IO>
 );

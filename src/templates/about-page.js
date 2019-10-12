@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from 'components/layout/layout';
-import Box from 'components/box/box';
-import Head from 'components/head/head';
-import Content, { HTMLContent } from 'components/content/content';
+import Layout from 'components/layout';
+import { Container } from 'components/blocks';
+import Head from 'components/head';
+import Content, { HTMLContent } from 'components/content';
 
 export const AboutPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <Box>
+    <Container wide>
       <div>
-        <PageContent className="content" content={content} />
+        <PageContent content={content} />
       </div>
-    </Box>
+    </Container>
   );
 };
 

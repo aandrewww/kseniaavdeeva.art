@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
-import { Button, Close } from './modal.css';
+// import { Button, Close } from './modal.css';
 
 import '@reach/dialog/styles.css';
 
@@ -47,17 +47,17 @@ export default class Modal extends PureComponent {
     }
 
     return (
-      <>
-        <Button onClick={showModal}>Show Modal</Button>
+      <Fragment>
+        <button type="button" onClick={showModal}>Show Modal</button>
 
         <Dialog isOpen={open}>
-          <Close onClick={hideModal}>
+          <button type="button" onClick={hideModal}>
             <VisuallyHidden>Close</VisuallyHidden>
             <span aria-hidden>×</span>
-          </Close>
+          </button>
           {children}
         </Dialog>
-      </>
+      </Fragment>
     );
   }
 }

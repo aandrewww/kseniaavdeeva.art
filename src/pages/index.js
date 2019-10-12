@@ -1,10 +1,10 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
-import Layout from 'components/layout/layout';
-import Box from 'components/box/box';
-import Title from 'components/title/title';
-import Projects from 'components/projects/projects';
 import { graphql } from 'gatsby';
+import { Styled, jsx } from 'theme-ui';
+import Layout from 'components/layout';
+import { Container } from 'components/blocks';
+import Projects from 'components/projects';
 
 const Index = ({ data }) => {
   const { frontmatter: home } = data.homePageData.edges[0].node;
@@ -12,14 +12,16 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <Box>
-        <Title as="h2" size="large">
+      <Container>
+        <Styled.h2>
           { home.heroText }
-        </Title>
-      </Box>
-      <Projects
-        items={projects}
-      />
+        </Styled.h2>
+      </Container>
+      <Container wide>
+        <Projects
+          items={projects}
+        />
+      </Container>
     </Layout>
   );
 };

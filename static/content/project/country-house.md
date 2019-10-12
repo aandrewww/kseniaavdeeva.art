@@ -1,14 +1,13 @@
 ---
 templateKey: project-page
-title: Awesome Project
-date: 2019-01-06T15:04:10.000Z
+title: Country House
+date: 2019-01-06T13:02:10.000Z
 description: Мой самый лучший проект ever
-thumbnail: /images/pic2.jpg
+thumbnail: /images/pic3.jpg
 tags:
-  - animation
-  - gif
+  - graphic
 ---
-![awesome](/images/pic2.jpg "awesome")
+![awesome](/images/pic3.jpg "awesome")
 
 - - -
 

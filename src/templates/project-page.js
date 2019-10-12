@@ -1,10 +1,11 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from 'components/layout/layout';
-import Box from 'components/box/box';
-import Head from 'components/head/head';
-import Content, { HTMLContent } from 'components/content/content';
+import { jsx } from 'theme-ui';
+import Layout from 'components/layout';
+import { Container } from 'components/blocks';
+import Head from 'components/head';
+import Content, { HTMLContent } from 'components/content';
 
 export const ProjectPageTemplate = ({
   content, contentComponent, description, title, /* tags */
@@ -12,35 +13,29 @@ export const ProjectPageTemplate = ({
   const PageContent = contentComponent || Content;
 
   return (
-    <Box>
-      <div className="page post container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title">{title}</h1>
-            <span className="date">
-              <time dateTime="13-11-2018">Tuesday. November 13, 2018</time> -{' '}
-              <span className="reading-time" title="Estimated read time">
-                2 mins
-              </span>
-            </span>
-            <p>{description}</p>
-            <PageContent className="content" content={content} />
-            {/* tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4 style={{ 'text-align': 'center' }}>Tags</h4>
-                <ul className="post-tags">
-                  {tags.map(tag => (
-                    <li className="item" key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-                  ) : null */}
+    <Container wide>
+      <div sx={{ width: 'wide' }}>
+        <h1>{title}</h1>
+        <span>
+          <time dateTime="13-11-2018">Tuesday. November 13, 2018</time> -{' '}
+          <span title="Estimated read time">2 mins</span>
+        </span>
+        <p>{description}</p>
+        <PageContent content={content} />
+        {/* tags && tags.length ? (
+          <div style={{ marginTop: `4rem` }}>
+            <h4 style={{ 'text-align': 'center' }}>Tags</h4>
+            <ul>
+              {tags.map(tag => (
+                <li key={tag + `tag`}>
+                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+              ) : null */}
       </div>
-    </Box>
+    </Container>
   );
 };
 

@@ -1,24 +1,52 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import Head from 'components/head/head';
-import Header from 'components/header/header';
-import Footer from 'components/footer/footer';
-import GlobalStyle from '../../global.css';
+import {
+  jsx,
+  Styled,
+  Layout as LayoutUI,
+  Main,
+} from 'theme-ui';
+import { Global } from '@emotion/core';
+import Head from 'components/head';
+import Header from 'components/header';
+import Footer from 'components/footer';
 
 const Layout = ({ data, children }) => (
-  <div>
-    <GlobalStyle />
-    <Head />
-    <Header
-      title={data.site.siteMetadata.siteTitle}
-      navbarData={data.navbarData}
+  <Styled.root>
+    <Global
+      styles={{
+        '*': {
+          boxSizing: 'border-box',
+        },
+        body: {
+          margin: 0,
+        },
+      }}
     />
-    {children}
-    <Footer
-      data={data.footerData}
-    />
-  </div>
+    <LayoutUI>
+      <Head />
+      <Header
+        title={data.site.siteMetadata.siteTitle}
+        navbarData={data.navbarData}
+      />
+      <Main>
+        <div
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column',
+            my: 4,
+          }}
+        >
+          {children}
+        </div>
+      </Main>
+      <Footer
+        data={data.footerData}
+      />
+    </LayoutUI>
+  </Styled.root>
 );
 
 Layout.propTypes = {

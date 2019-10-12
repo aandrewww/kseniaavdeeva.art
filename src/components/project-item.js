@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { Title, Copy } from './item.css';
+// import { Styled } from 'theme-ui';
 
 const Item = ({
   title, tags, image, slug,
@@ -11,8 +11,8 @@ const Item = ({
     <figure>
       <Img fluid={image ? image.childImageSharp.fluid : {}} alt={title} />
       <figcaption>
-        <Title>{title}</Title>
-        <Copy>{tags}</Copy>
+        <span>{title}</span>
+        <p>{tags}</p>
       </figcaption>
     </figure>
   </Link>

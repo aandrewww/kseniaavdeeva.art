@@ -1,20 +1,21 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from 'components/layout/layout';
-import Box from 'components/box/box';
-import Head from 'components/head/head';
-import Content, { HTMLContent } from 'components/content/content';
+import { jsx } from 'theme-ui';
+import Layout from 'components/layout';
+import { Container } from 'components/blocks';
+import Head from 'components/head';
+import Content, { HTMLContent } from 'components/content';
 
 export const ProjectsPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <Box>
-      <div>
-        <PageContent className="content" content={content} />
+    <Container wide>
+      <div sx={{ width: 'wide' }}>
+        <PageContent content={content} />
       </div>
-    </Box>
+    </Container>
   );
 };
 

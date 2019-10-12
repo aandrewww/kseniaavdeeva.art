@@ -1,10 +1,10 @@
 import React from 'react';
-import Box from 'components/box/box';
-import Layout from 'components/layout/layout';
+import { Container } from 'components/blocks';
+import Layout from 'components/layout';
 
 const NotFound = () => (
   <Layout>
-    <Box>Not found.</Box>
+    <Container>Not found.</Container>
   </Layout>
 );
 

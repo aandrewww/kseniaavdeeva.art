@@ -1,22 +1,33 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { Styled, jsx } from 'theme-ui';
 
 export const CustomLink = ({
   linkType, linkURL, children, className,
 }) => {
   if (linkType === 'internal') {
     return (
-      <Link className={className} to={linkURL}>
+      <Styled.a
+        as={Link}
+        to={linkURL}
+        className={className}
+        activeClassName="active"
+      >
         {children}
-      </Link>
+      </Styled.a>
     );
   }
 
   return (
-    <a className={className} href={linkURL} target="_blank" rel="noopener noreferrer">
+    <Styled.a
+      className={className}
+      href={linkURL}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
-    </a>
+    </Styled.a>
   );
 };
 

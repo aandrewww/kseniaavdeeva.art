@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { accent } from 'constants/theme';
+import { colors } from 'constants/theme';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -19,7 +19,6 @@ export default createGlobalStyle`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
 
@@ -30,22 +29,11 @@ export default createGlobalStyle`
   }
 
   html {
-    font-size: 62.5%;
   }
 
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    line-height: 1;
-    font-size: 1.6rem;
-    color: #000;
+    color: ${colors.black};
     background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    -webkit-font-feature-settings: "pnum";
-    font-feature-settings: "pnum";
-    font-variant-numeric: proportional-nums;
   }
 
   ol, ul {
@@ -68,7 +56,7 @@ export default createGlobalStyle`
   }
 
   a {
-    color: ${accent};
+    color: ${colors.primary};
   }
 
   pre {
@@ -79,9 +67,9 @@ export default createGlobalStyle`
     font-size: 85%;
     line-height: 1.45;
     border-radius: 5px;
-    color: ${accent};
+    color: ${colors.primary};
     border: 1px solid #ddd;
-    font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    /* font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace; */
   }
 
   video {

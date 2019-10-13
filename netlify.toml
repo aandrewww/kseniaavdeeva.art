@@ -4,5 +4,4 @@
 [build.environment]
   YARN_VERSION = "1.17.3"
   YARN_FLAGS = "--no-ignore-optional"
-[context.production]
-  environment = { GA_ID = "UA-149911098-1"}
+

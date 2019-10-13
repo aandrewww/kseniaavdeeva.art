@@ -20,7 +20,7 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
 
 AboutPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.node,
+  contentComponent: PropTypes.func,
 };
 
 AboutPageTemplate.defaultProps = {

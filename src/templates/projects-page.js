@@ -21,7 +21,7 @@ export const ProjectsPageTemplate = ({ content, contentComponent }) => {
 
 ProjectsPageTemplate.propTypes = {
   content: PropTypes.string.isRequired,
-  contentComponent: PropTypes.node,
+  contentComponent: PropTypes.func,
 };
 
 ProjectsPageTemplate.defaultProps = {

@@ -3,10 +3,10 @@ templateKey: navbar
 navbarItems:
   - label: About
     linkType: internal
-    linkURL: /about
+    linkURL: '/about'
   - label: Projects
     linkType: internal
-    linkURL: /projects
+    linkURL: '/projects'
   - label: Dribble
     linkType: external
     linkURL: 'https://dribbble.com/ksenia-avdeeva'

@@ -11,13 +11,8 @@
     "build:favicons": "node scripts/favicons",
     "build": "npm run build:dir && npm run build:favicons && gatsby build",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "ava **/*.test.js --verbose"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "ava",
-      "core-js"
-    ]
   },
   "dependencies": {
     "@emotion/core": "^10.0.21",
@@ -73,6 +68,7 @@
     "lighthouse": "^4.0.0",
     "mkdirp": "^0.5.1",
     "netlify-cms-backend-fs": "^0.4.4",
-    "node-gyp": "^3.8.0"
+    "node-gyp": "^3.8.0",
+    "prettier": "^1.15.3"
   }
 }

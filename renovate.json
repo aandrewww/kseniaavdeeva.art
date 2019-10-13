@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "statusCheckVerify": true,
+  "ignoreDeps": [
+    "ava",
+    "core-js"
+  ]
+}

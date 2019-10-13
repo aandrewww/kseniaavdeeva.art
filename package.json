@@ -70,7 +70,7 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-import-resolver-babel-module": "^5.1.0",
     "favicons": "^5.3.0",
-    "lighthouse": "^4.0.0",
+    "lighthouse": "^5.0.0",
     "mkdirp": "^0.5.1",
     "netlify-cms-backend-fs": "^0.4.4",
     "node-gyp": "^3.8.0"

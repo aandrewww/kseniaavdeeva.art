@@ -36,7 +36,6 @@ const Layout = ({ data, children }) => (
             display: 'flex',
             alignItems: 'center',
             flexDirection: 'column',
-            my: 4,
           }}
         >
           {children}

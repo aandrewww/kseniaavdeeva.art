@@ -24,14 +24,15 @@ export default merge(typography, {
     heading: 800,
     bold: 700,
   },
-  fontSizes: [14, 16, 18, 20, 24, 32, 48, 64, 72, 96],
+  breakpoints: ['40em', '56em', '64em'],
+  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72, 96],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   type: {
     heading: {
       fontWeight: 'heading',
       lineHeight: 'heading',
-      mt: 4,
-      mb: 3,
+      mt: 1,
+      mb: 1,
     },
     small: {
       fontWeight: 'bold',

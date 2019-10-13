@@ -32,7 +32,7 @@ export default {
   },
   // from typography overrideThemeStyles
   a: {
-    color: 'primary',
+    color: 'secondary',
   },
   hr: {
     border: 0,
@@ -70,13 +70,20 @@ export default {
     display: 'inline-flex',
     alignItems: 'center',
     fontWeight: 'bold',
-    marginRight: 2,
+    fontSize: 3,
+    marginRight: 3,
+    a: {
+      color: 'primary',
+    },
   },
   footeritem: {
     variant: 'styles.navlink',
     display: 'inline-flex',
     alignItems: 'center',
-    fontSize: '0.8em',
+    fontSize: 0,
     marginRight: 1,
+    a: {
+      color: 'primary',
+    },
   },
 };

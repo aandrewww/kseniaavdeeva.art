@@ -29,6 +29,7 @@
     "deepmerge": "^4.1.1",
     "gatsby": "^2.15.26",
     "gatsby-image": "^2.2.21",
+    "gatsby-plugin-google-analytics": "^2.1.21",
     "gatsby-plugin-netlify": "^2.1.13",
     "gatsby-plugin-netlify-cms": "^4.1.16",
     "gatsby-plugin-offline": "^3.0.9",

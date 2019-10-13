@@ -62,6 +62,12 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: siteConfig.googleAnalyticsId,
+      },
+    },
     'gatsby-plugin-webpack-size',
     'gatsby-plugin-theme-ui',
     {

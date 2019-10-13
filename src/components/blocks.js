@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import PropTypes from 'prop-types';
 import { jsx } from 'theme-ui';
 
 export const Banner = (props) => (
@@ -29,6 +30,10 @@ export const Banner = (props) => (
   </div>
 );
 
+Banner.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 export const Container = ({ wide, ...props }) => (
   <div
     sx={{
@@ -39,36 +44,14 @@ export const Container = ({ wide, ...props }) => (
   </div>
 );
 
-export const Tiles = (props) => (
-  <div
-    sx={{
-      ul: {
-        listStyle: 'none',
-        p: 0,
-        m: 0,
-        display: 'grid',
-        gridGap: 4,
-        gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-      },
-      h2: {
-        fontSize: 2,
-      },
-      img: {
-        display: 'block',
-        width: 128,
-        maxWidth: '100%',
-        height: 'auto',
-        m: 'auto',
-      },
-      a: {
-        variant: 'styles.navlink',
-      },
-      ...props.sx
-    }}
-  >
-    { props.children }
-  </div>
-);
+Container.propTypes = {
+  wide: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
+Container.defaultProps = {
+  wide: false,
+};
 
 export const List = (props) => (
   <div
@@ -85,9 +68,38 @@ export const List = (props) => (
         variant: 'styles.navlink',
         fontWeight: 'bold',
       },
-      ...props.sx
+      ...props.sx,
     }}
   >
     { props.children }
   </div>
 );
+
+List.propTypes = {
+  sx: PropTypes.shape(),
+  children: PropTypes.node.isRequired,
+};
+
+List.defaultProps = {
+  sx: {},
+};
+
+export const Tag = ({ ...props }) => (
+  <span
+    sx={{
+      variant: 'type.small',
+      bg: 'primary',
+      mr: 1,
+      px: 1,
+      py: 1,
+      fontSize: 0,
+      borderRadius: 5,
+    }}
+  >
+    { props.children }
+  </span>
+);
+
+Tag.propTypes = {
+  children: PropTypes.node.isRequired,
+};

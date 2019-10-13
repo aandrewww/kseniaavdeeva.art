@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
 import { jsx, Footer as FooterUI } from 'theme-ui';
-import { CustomLink } from './custom-link';
+import { CustomLink } from 'components/custom-link';
 
 export const FooterTemplate = ({ data }) => (
   <FooterUI>

@@ -13,4 +13,5 @@ module.exports = {
     twitter: '',
     fbAppId: '',
   },
+  googleAnalyticsId: 'UA-149911098-1',
 };

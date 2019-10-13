@@ -24,7 +24,7 @@ const Projects = ({ items }) => (
           key={project.id}
           image={project.frontmatter.thumbnail}
           title={project.frontmatter.title}
-          tags={project.frontmatter.tags.join(', ')}
+          tags={project.frontmatter.tags}
           slug={project.fields.slug}
         />
       );

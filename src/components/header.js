@@ -11,8 +11,8 @@ import {
 
 import Switch from 'components/switch';
 import Navbar from 'components/navbar';
-// import sun from '../../assets/sun.png';
-// import moon from '../../assets/moon.png';
+import sun from 'src/images/sun.png';
+import moon from 'src/images/moon.png';
 
 // Example of a component-specific page transition
 const AnimatedContainer = posed.div({
@@ -30,35 +30,35 @@ const AnimatedContainer = posed.div({
   },
 });
 
-// const checkedIcon = (
-//   <img
-//     alt="moon indicating dark mode"
-//     src={moon}
-//     width="16"
-//     height="16"
-//     role="presentation"
-//     css={{
-//       pointerEvents: `none`,
-//       margin: 4,
-//     }}
-//   />
-// )
+const checkedIcon = (
+  <img
+    alt="moon indicating dark mode"
+    src={moon}
+    width="16"
+    height="16"
+    role="presentation"
+    css={{
+      pointerEvents: 'none',
+      margin: 4,
+    }}
+  />
+);
 
-// const uncheckedIcon = (
-//   <img
-//     alt="sun indicating light mode"
-//     src={sun}
-//     width="16"
-//     height="16"
-//     role="presentation"
-//     css={{
-//       pointerEvents: `none`,
-//       margin: 4,
-//     }}
-//   />
-// )
+const uncheckedIcon = (
+  <img
+    alt="sun indicating light mode"
+    src={sun}
+    width="16"
+    height="16"
+    role="presentation"
+    css={{
+      pointerEvents: 'none',
+      margin: 4,
+    }}
+  />
+);
 
-const Header = ({ title, navbarData }) => {
+const Header = ({ navbarData }) => {
   const [colorMode, setColorMode] = useColorMode();
   const isDark = colorMode === 'dark';
 
@@ -76,7 +76,7 @@ const Header = ({ title, navbarData }) => {
           maxWidth: 'wide',
           mx: 'auto',
           px: 3,
-          py: 2,
+          py: 3,
         }}
       >
         <Link
@@ -99,9 +99,10 @@ const Header = ({ title, navbarData }) => {
           css={css({
             bg: 'black',
           })}
-          // checkedIcon={checkedIcon}
-          // uncheckedIcon={uncheckedIcon}
+          checkedIcon={checkedIcon}
+          uncheckedIcon={uncheckedIcon}
           checked={isDark}
+          /* eslint-disable-next-line react/jsx-no-bind */
           onChange={toggleColorMode}
         />
       </HeaderUI>
@@ -110,7 +111,6 @@ const Header = ({ title, navbarData }) => {
 };
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired,
   navbarData: PropTypes.shape(),
 };
 

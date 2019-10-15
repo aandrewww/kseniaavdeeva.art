@@ -7,7 +7,7 @@ navbarItems:
   - label: Projects
     linkType: internal
     linkURL: '/projects'
-  - label: Dribble
+  - label: Dribbble
     linkType: external
     linkURL: 'https://dribbble.com/ksenia-avdeeva'
 ---

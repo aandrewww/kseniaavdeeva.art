@@ -84,7 +84,7 @@ collections:
             widget: "list",
             fields: [
               { label: "Label", name: "label", widget: "string" },
-              { label: "Social Type", name: "type", widget: "select", options: ["email", "instagram", "linkedin", "dribble", "behance"] },
+              { label: "Social Type", name: "type", widget: "select", options: ["email", "instagram", "linkedin", "dribbble", "behance"] },
               { label: "URL", name: "link", widget: "string" },
             ]
           }

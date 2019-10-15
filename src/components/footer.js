@@ -2,6 +2,19 @@
 import PropTypes from 'prop-types';
 import { jsx, Footer as FooterUI } from 'theme-ui';
 import { CustomLink } from 'components/custom-link';
+import Dribble from '../images/dribbble.svg';
+import Instagram from '../images/instagram.svg';
+import Email from '../images/email.svg';
+import Behance from '../images/behance.svg';
+import Linkedin from '../images/linkedin.svg';
+
+const FOOTER_ICONS = {
+  email: <Email />,
+  instagram: <Instagram />,
+  linkedin: <Linkedin />,
+  dribbble: <Dribble />,
+  behance: <Behance />,
+};
 
 export const FooterTemplate = ({ data }) => (
   <FooterUI>
@@ -16,13 +29,15 @@ export const FooterTemplate = ({ data }) => (
         {data.socialItems.map((menuItem) => (
           <li
             key={menuItem.link}
-            sx={{ variant: 'styles.footeritem' }}
+            sx={{
+              variant: 'styles.footeritem',
+            }}
           >
             <CustomLink
               linkType="external"
               linkURL={menuItem.link}
             >
-              {menuItem.type}|{menuItem.label}
+              { FOOTER_ICONS[menuItem.type] }
             </CustomLink>
           </li>
         ))}

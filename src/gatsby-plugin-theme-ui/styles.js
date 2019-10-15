@@ -81,9 +81,14 @@ export default {
     display: 'inline-flex',
     alignItems: 'center',
     fontSize: 0,
-    marginRight: 1,
+    maxWidth: '24px',
+    marginRight: [4, 7, 10],
     a: {
       color: 'primary',
+    },
+    svg: {
+      width: '100%',
+      fill: 'primary',
     },
   },
 };

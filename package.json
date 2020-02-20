@@ -52,7 +52,7 @@
     "react-pose": "^4.0.5",
     "react-switch": "^5.0.1",
     "react-typography": "^0.16.19",
-    "theme-ui": "^0.2.44",
+    "theme-ui": "^0.3.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19"
   },

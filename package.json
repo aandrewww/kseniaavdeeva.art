@@ -19,7 +19,7 @@
     "@mdx-js/react": "^1.5.1",
     "@reach/dialog": "^0.2.0",
     "@reach/router": "^1.2.1",
-    "@reach/visually-hidden": "^0.1.1",
+    "@reach/visually-hidden": "^0.10.0",
     "@theme-ui/typography": "^0.2.40",
     "deepmerge": "^4.1.1",
     "gatsby": "^2.15.36",

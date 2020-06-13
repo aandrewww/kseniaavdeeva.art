@@ -5,9 +5,7 @@ import { jsx } from 'theme-ui';
 import { CustomLink } from 'components/custom-link';
 import { Tag } from 'components/blocks';
 
-const Item = ({
-  title, tags, image, slug,
-}) => (
+const Item = ({ title, tags, image, slug }) => (
   <figure>
     <CustomLink linkURL={slug}>
       <Img fluid={image ? image.childImageSharp.fluid : {}} alt={title} />
@@ -23,7 +21,11 @@ const Item = ({
         </div>
       </figcaption>
     </CustomLink>
-    <div sx={{ mt: 2 }}>{ tags.map((tag) => <Tag key={tag}>{ tag }</Tag>) }</div>
+    <div sx={{ mt: 2 }}>
+      {tags.map((tag) => (
+        <Tag key={tag}>{tag}</Tag>
+      ))}
+    </div>
   </figure>
 );
 

@@ -1,12 +1,7 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import {
-  jsx,
-  Styled,
-  Layout as LayoutUI,
-  Main,
-} from 'theme-ui';
+import { jsx, Styled } from 'theme-ui';
 import { Global } from '@emotion/core';
 import Head from 'components/head';
 import Header from 'components/header';
@@ -24,13 +19,10 @@ const Layout = ({ data, children }) => (
         },
       }}
     />
-    <LayoutUI>
+    <div>
       <Head />
-      <Header
-        title={data.site.siteMetadata.siteTitle}
-        navbarData={data.navbarData}
-      />
-      <Main>
+      <Header title={data.site.siteMetadata.siteTitle} navbarData={data.navbarData} />
+      <main>
         <div
           sx={{
             display: 'flex',
@@ -40,11 +32,9 @@ const Layout = ({ data, children }) => (
         >
           {children}
         </div>
-      </Main>
-      <Footer
-        data={data.footerData}
-      />
-    </LayoutUI>
+      </main>
+      <Footer data={data.footerData} />
+    </div>
   </Styled.root>
 );
 
@@ -93,9 +83,7 @@ const LayoutWithQuery = ({ children }) => (
       }
     `}
     /* eslint-disable react/jsx-no-bind */
-    render={(data) => (
-      <Layout data={data}> { children }</Layout>
-    )}
+    render={(data) => <Layout data={data}> {children}</Layout>}
   />
 );
 

@@ -1,16 +1,13 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
-import Item from 'components/project-item';
 import { jsx } from 'theme-ui';
+import Item from 'components/project-item';
 
 const Projects = ({ items }) => (
   <div
     sx={{
       display: 'grid',
-      gridTemplateColumns: [
-        'repeat(2, 1fr)',
-        'repeat(4, 1fr)',
-      ],
+      gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(4, 1fr)'],
       gridAutoFlow: 'row',
       px: 2,
       py: 4,

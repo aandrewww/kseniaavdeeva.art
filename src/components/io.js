@@ -6,21 +6,24 @@ const listeners = [];
 
 function getIO(rootMargin) {
   if (typeof io === 'undefined' && typeof window !== 'undefined' && window.IntersectionObserver) {
-    io = new window.IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        listeners.forEach((l) => {
-          if (l[0] === entry.target) {
-            // Edge doesn't currently support isIntersecting, so also test for an intersectionRatio > 0
-            if (entry.isIntersecting || entry.intersectionRatio > 0) {
-              // io.unobserve(l[0]);
-              l[1](true);
-            } else if (!entry.isIntersecting || entry.intersectionRatio <= 0) {
-              l[1](false);
+    io = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          listeners.forEach((l) => {
+            if (l[0] === entry.target) {
+              // Edge doesn't currently support isIntersecting, so also test for an intersectionRatio > 0
+              if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                // io.unobserve(l[0]);
+                l[1](true);
+              } else if (!entry.isIntersecting || entry.intersectionRatio <= 0) {
+                l[1](false);
+              }
             }
-          }
+          });
         });
-      });
-    }, { rootMargin });
+      },
+      { rootMargin }
+    );
   }
 
   return io;
@@ -68,26 +71,37 @@ export default class IO extends Component {
       IOSupported = true;
     }
 
-    this.setState({
-      isVisible,
-      hasBeenVisible,
-      /* eslint-disable-next-line react/no-unused-state */
-      IOSupported,
-    }, this.listenToIntersections);
+    this.setState(
+      {
+        isVisible,
+        hasBeenVisible,
+        /* eslint-disable-next-line react/no-unused-state */
+        IOSupported,
+      },
+      this.listenToIntersections
+    );
+  }
+
+  componentWillUnmount() {
+    this.io.disconnect();
   }
 
   listenToIntersections = () => {
-    this.io = listenToIntersections(this.ref, (isVisible) => {
-      this.setState((state) => {
-        let newState = {};
+    this.io = listenToIntersections(
+      this.ref,
+      (isVisible) => {
+        this.setState((state) => {
+          let newState = {};
 
-        if (!state.hasBeenVisible && isVisible) {
-          newState = { hasBeenVisible: true };
-        }
+          if (!state.hasBeenVisible && isVisible) {
+            newState = { hasBeenVisible: true };
+          }
 
-        return { isVisible, ...newState };
-      });
-    }, this.props.rootMargin);
+          return { isVisible, ...newState };
+        });
+      },
+      this.props.rootMargin
+    );
   };
 
   handleRef = (ref) => {
@@ -96,18 +110,10 @@ export default class IO extends Component {
     }
   };
 
-  componentWillUnmount() {
-    this.io.disconnect();
-  }
-
   render() {
     const { isVisible, hasBeenVisible } = this.state;
 
-    return (
-      <div ref={this.handleRef}>
-        {this.props.children({ isVisible, hasBeenVisible })}
-      </div>
-    );
+    return <div ref={this.handleRef}>{this.props.children({ isVisible, hasBeenVisible })}</div>;
   }
 }
 

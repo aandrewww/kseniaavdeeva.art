@@ -28,16 +28,15 @@ AboutPageTemplate.defaultProps = {
 };
 
 const About = ({ data }) => {
-  const { frontmatter: { title }, html } = data.aboutPageData.edges[0].node;
+  const {
+    frontmatter: { title },
+    html,
+  } = data.aboutPageData.edges[0].node;
 
   return (
     <Layout>
       <Head pageTitle={title} />
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        heading={title}
-        content={html}
-      />
+      <AboutPageTemplate contentComponent={HTMLContent} heading={title} content={html} />
     </Layout>
   );
 };

@@ -3,24 +3,17 @@ const { test } = require('ava');
 const lighthouse = require('lighthouse');
 const { siteUrl } = require('../site-config');
 
-const launchChromeAndRunLighthouse = (
-  url,
-  opts = { chromeFlags: ['--headless'] },
-  config = null
-) =>
+const launchChromeAndRunLighthouse = (url, opts = { chromeFlags: ['--headless'] }, config = null) =>
   chromeLauncher.launch({ chromeFlags: opts.chromeFlags }).then((chrome) => {
     opts.port = chrome.port;
 
-    return lighthouse(url, opts, config).then((results) =>
-      chrome.kill().then(() => results.lhr));
+    return lighthouse(url, opts, config).then((results) => chrome.kill().then(() => results.lhr));
   });
 
 let scores;
 test.before(async () => {
   console.log(`Auditing ${siteUrl}.\n`);
-  scores = await launchChromeAndRunLighthouse(siteUrl).then(
-    ({ categories }) => categories
-  );
+  scores = await launchChromeAndRunLighthouse(siteUrl).then(({ categories }) => categories);
 });
 
 const logScore = (score) => `Is ${score * 100}.`;

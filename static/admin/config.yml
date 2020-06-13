@@ -1,14 +1,10 @@
-development_overrides:
-  # run file-system backend for local development
-  backend:
-    name: file-system
-    api_root: /api
-  # reset 'editorial_workflow' if enabled, since it breaks in file-system mode
-  publish_mode: 'simple'
-
 backend:
   name: git-gateway
   branch: master
+
+# # when using the default proxy server port
+local_backend:
+  url: http://localhost:8000/api/v1
 
 media_folder: static/images/upload
 public_folder: /images
@@ -26,13 +22,6 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      # - file: "content/home/index.md"
-      #   label: "Home"
-      #   name: "home"
-      #   fields:
-      #     - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index" }
-      #     - { label: "Title", name: "title", widget: "string" }
-      #     - { label: "Body", name: "body", widget: "markdown" }
       - file: "static/content/home/index.md"
         label: "Home"
         name: "home"

@@ -10,8 +10,7 @@ export const Banner = (props) => (
       h1: {
         fontSize: [5, 6, 7],
       },
-      p: {
-      },
+      p: {},
       ul: {
         listStyle: 'none',
         display: 'flex',
@@ -26,7 +25,7 @@ export const Banner = (props) => (
       },
     }}
   >
-    { props.children }
+    {props.children}
   </div>
 );
 
@@ -40,7 +39,7 @@ export const Container = ({ wide, ...props }) => (
       maxWidth: wide ? 'wide' : 'container',
     }}
   >
-    { props.children }
+    {props.children}
   </div>
 );
 
@@ -71,7 +70,7 @@ export const List = (props) => (
       ...props.sx,
     }}
   >
-    { props.children }
+    {props.children}
   </div>
 );
 
@@ -96,7 +95,7 @@ export const Tag = ({ ...props }) => (
       borderRadius: 5,
     }}
   >
-    { props.children }
+    {props.children}
   </span>
 );
 

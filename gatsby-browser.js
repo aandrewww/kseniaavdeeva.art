@@ -4,11 +4,7 @@ import wrapPageElementWithTransition from 'helpers/wrapPageElement';
 
 // React Context in Browser
 // eslint-disable-next-line react/prop-types
-export const wrapRootElement = ({ element }) => (
-  <AppProvider>
-    {element}
-  </AppProvider>
-);
+export const wrapRootElement = ({ element }) => <AppProvider>{element}</AppProvider>;
 
 // Page Transitions
 export const wrapPageElement = wrapPageElementWithTransition;

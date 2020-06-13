@@ -15,29 +15,17 @@ const normalizeInternalLink = (link) => {
   return internalLink[0] !== '/' ? `/${internalLink}` : internalLink;
 };
 
-export const CustomLink = ({
-  linkType, linkURL, children, className,
-}) => {
+export const CustomLink = ({ linkType, linkURL, children, className }) => {
   if (linkType === 'internal') {
     return (
-      <Styled.a
-        as={Link}
-        to={normalizeInternalLink(linkURL)}
-        className={className}
-        activeClassName="active"
-      >
+      <Styled.a as={Link} to={normalizeInternalLink(linkURL)} className={className} activeClassName="active">
         {children}
       </Styled.a>
     );
   }
 
   return (
-    <Styled.a
-      className={className}
-      href={linkURL}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Styled.a className={className} href={linkURL} target="_blank" rel="noopener noreferrer">
       {children}
     </Styled.a>
   );

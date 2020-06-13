@@ -1,12 +1,8 @@
-const favicons = require('favicons');
 const path = require('path');
 const fs = require('fs');
+const favicons = require('favicons');
 
-const {
-  siteTitleShort,
-  themeColor,
-  backgroundColor,
-} = require('../site-config');
+const { siteTitleShort, themeColor, backgroundColor } = require('../site-config');
 
 const dir = path.resolve(__dirname, '../public/icons/');
 
@@ -50,27 +46,19 @@ const callback = (err, res) => {
   }
 
   res.images.forEach((image) => {
-    fs.writeFile(
-      path.resolve(__dirname, '../public/icons/', image.name),
-      image.contents,
-      (error) => {
-        if (error) {
-          console.log(error);
-        }
+    fs.writeFile(path.resolve(__dirname, '../public/icons/', image.name), image.contents, (error) => {
+      if (error) {
+        console.log(error);
       }
-    );
+    });
   });
 
   res.files.forEach((file) => {
-    fs.writeFile(
-      path.resolve(__dirname, '../public/', file.name),
-      file.contents,
-      (error) => {
-        if (error) {
-          console.log(error);
-        }
+    fs.writeFile(path.resolve(__dirname, '../public/', file.name), file.contents, (error) => {
+      if (error) {
+        console.log(error);
       }
-    );
+    });
   });
 };
 

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
-import { jsx, Footer as FooterUI } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { CustomLink } from 'components/custom-link';
 import Dribble from '../images/dribbble.svg';
 import Instagram from '../images/instagram.svg';
@@ -17,7 +17,7 @@ const FOOTER_ICONS = {
 };
 
 export const FooterTemplate = ({ data }) => (
-  <FooterUI>
+  <footer>
     {data.socialItems.length > 0 && (
       <ul
         sx={{
@@ -33,17 +33,14 @@ export const FooterTemplate = ({ data }) => (
               variant: 'styles.footeritem',
             }}
           >
-            <CustomLink
-              linkType="external"
-              linkURL={menuItem.link}
-            >
-              { FOOTER_ICONS[menuItem.type] }
+            <CustomLink linkType="external" linkURL={menuItem.link}>
+              {FOOTER_ICONS[menuItem.type]}
             </CustomLink>
           </li>
         ))}
       </ul>
     )}
-  </FooterUI>
+  </footer>
 );
 
 FooterTemplate.propTypes = {

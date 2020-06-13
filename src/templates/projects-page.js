@@ -9,6 +9,7 @@ import Content, { HTMLContent } from 'components/content';
 
 export const ProjectsPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
+  console.log(PageContent);
 
   return (
     <Container wide>
@@ -29,16 +30,15 @@ ProjectsPageTemplate.defaultProps = {
 };
 
 const Projects = ({ data }) => {
-  const { frontmatter: { title }, html } = data.projectsPageData.edges[0].node;
+  const {
+    frontmatter: { title },
+    html,
+  } = data.projectsPageData.edges[0].node;
 
   return (
     <Layout>
       <Head pageTitle={title} />
-      <ProjectsPageTemplate
-        contentComponent={HTMLContent}
-        heading={title}
-        content={html}
-      />
+      <ProjectsPageTemplate contentComponent={HTMLContent} heading={title} content={html} />
     </Layout>
   );
 };

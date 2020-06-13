@@ -13,14 +13,8 @@ export const NavbarTemplate = ({ data }) => (
         }}
       >
         {data.navbarItems.map((menuItem) => (
-          <li
-            key={menuItem.linkURL}
-            sx={{ variant: 'styles.navitem' }}
-          >
-            <CustomLink
-              linkType={menuItem.linkType}
-              linkURL={menuItem.linkURL}
-            >
+          <li key={menuItem.linkURL} sx={{ variant: 'styles.navitem' }}>
+            <CustomLink linkType={menuItem.linkType} linkURL={menuItem.linkURL}>
               {menuItem.label}
             </CustomLink>
           </li>

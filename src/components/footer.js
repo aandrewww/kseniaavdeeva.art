@@ -19,16 +19,17 @@ const FOOTER_ICONS = {
 export const FooterTemplate = ({ data }) => (
   <footer>
     {data.socialItems.length > 0 && (
-      <ul
+      <div
         sx={{
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
+          py: 3,
         }}
       >
         {data.socialItems.map((menuItem) => (
-          <li
-            key={menuItem.link}
+          <div
+            key={menuItem.label}
             sx={{
               variant: 'styles.footeritem',
             }}
@@ -36,9 +37,9 @@ export const FooterTemplate = ({ data }) => (
             <CustomLink linkType="external" linkURL={menuItem.link}>
               {FOOTER_ICONS[menuItem.type]}
             </CustomLink>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     )}
   </footer>
 );

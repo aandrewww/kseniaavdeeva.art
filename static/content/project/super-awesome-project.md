@@ -1,14 +1,14 @@
 ---
 templateKey: project-page
-title: Super Awesome Project
+title: Sport
 date: 2019-02-06T15:04:10.000Z
-description: Мой самый лучший проект ever
-thumbnail: /images/samuel-zeller-yeiq7ploaag-unsplash.jpg
+description: Sport
+thumbnail: /images/63b7f799515525.5ef46c0b8dd55.png
 tags:
   - animation
   - gif
 ---
-![awesome](/images/samuel-zeller-yeiq7ploaag-unsplash.jpg "awesome")
+![sport](/images/63b7f799515525.5ef46c0b8dd55.png "sport")
 
 - - -
 

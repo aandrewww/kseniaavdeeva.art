@@ -4,65 +4,84 @@ export default {
     lineHeight: 'body',
     fontSize: 2,
   },
+  h1: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 5,
+  },
+  h2: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 4,
+  },
+  h3: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 3,
+  },
+  h4: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 2,
+  },
+  h5: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 1,
+  },
+  h6: {
+    color: 'text',
+    fontFamily: 'heading',
+    lineHeight: 'heading',
+    fontWeight: 'heading',
+    fontSize: 0,
+  },
+  a: {
+    color: 'secondary',
+    textDecoration: 'none',
+  },
   pre: {
-    variant: 'prism',
     fontFamily: 'monospace',
-    tabSize: 4,
-    hyphens: 'none',
-    marginBottom: 2,
-    color: 'white',
-    bg: 'prism.background',
-    overflow: 'auto',
-    borderRadius: 10,
-    p: 3,
+    overflowX: 'auto',
+    code: {
+      color: 'inherit',
+    },
   },
   code: {
     fontFamily: 'monospace',
-    // from typography overrideThemeStyles
-    // 'h1 code, h2 code, h3 code, h4 code, h5 code, h6 code'
     fontSize: 'inherit',
   },
-  inlineCode: {
-    borderRadius: '0.3em',
-    color: 'secondary',
-    bg: 'highlight',
-    paddingTop: '0.15em',
-    paddingBottom: '0.05em',
-    paddingX: '0.2em',
+  table: {
+    width: '100%',
+    borderCollapse: 'separate',
+    borderSpacing: 0,
   },
-  // from typography overrideThemeStyles
-  a: {
-    color: 'secondary',
+  th: {
+    textAlign: 'left',
+    borderBottomStyle: 'solid',
   },
-  hr: {
-    border: 0,
-    my: 4,
-    borderBottom: '1px solid',
-    borderColor: 'muted',
+  td: {
+    textAlign: 'left',
+    borderBottomStyle: 'solid',
   },
-  p: {
-    code: {
-      fontSize: 'inherit',
-    },
-  },
-  li: {
-    code: {
-      fontSize: 'inherit',
-    },
-  },
-  blockquote: {
-    color: 'inherit',
-    borderLeftColor: 'inherit',
-    opacity: 0.8,
-    '&.translation': {
-      fontSize: '1em',
-    },
+  img: {
+    maxWidth: '100%',
   },
   navlink: {
     color: 'inherit',
     textDecoration: 'none',
     ':hover,:focus': {
-      color: 'primary',
+      color: 'secondary',
     },
   },
   navitem: {
@@ -73,7 +92,10 @@ export default {
     fontSize: 3,
     marginRight: 3,
     a: {
-      color: 'primary',
+      color: 'secondary',
+      lineHeight: 1,
+      verticalAlign: 'middle',
+      marginTop: '3px',
     },
   },
   footeritem: {
@@ -82,13 +104,33 @@ export default {
     alignItems: 'center',
     fontSize: 0,
     maxWidth: '24px',
-    marginRight: [4, 7, 10],
+    marginRight: [2],
     a: {
-      color: 'primary',
+      color: 'secondary',
     },
     svg: {
       width: '100%',
-      fill: 'primary',
+      fill: 'secondary',
     },
+  },
+  projectLink: {
+    position: 'relative',
+    display: 'block',
+    ':hover div': {
+      display: 'flex',
+    },
+  },
+  projectLinkHover: {
+    display: 'none',
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 2,
+    backgroundColor: 'rgba(0, 0, 0, .85)',
+    transition: 'background-color 140ms cubic-bezier(.33,0,.2,1)',
   },
 };

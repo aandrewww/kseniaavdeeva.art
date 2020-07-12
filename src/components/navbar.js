@@ -6,20 +6,20 @@ import { CustomLink } from 'components/custom-link';
 export const NavbarTemplate = ({ data }) => (
   <nav>
     {data.navbarItems.length > 0 && (
-      <ul
+      <div
         sx={{
           display: 'flex',
           listStyle: 'none',
         }}
       >
         {data.navbarItems.map((menuItem) => (
-          <li key={menuItem.linkURL} sx={{ variant: 'styles.navitem' }}>
+          <div key={menuItem.linkURL} sx={{ variant: 'styles.navitem' }}>
             <CustomLink linkType={menuItem.linkType} linkURL={menuItem.linkURL}>
               {menuItem.label}
             </CustomLink>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     )}
   </nav>
 );

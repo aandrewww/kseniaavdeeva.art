@@ -7,10 +7,8 @@ const Projects = ({ items }) => (
   <div
     sx={{
       display: 'grid',
-      gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(4, 1fr)'],
+      gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, 1fr)'],
       gridAutoFlow: 'row',
-      px: 2,
-      py: 4,
     }}
   >
     {items.map((item) => {

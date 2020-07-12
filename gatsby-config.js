@@ -79,6 +79,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/gatsby-plugin-theme-ui/typography`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`, // default: undefined

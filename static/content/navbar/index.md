@@ -1,14 +1,13 @@
 ---
 templateKey: navbar
 navbarItems:
-  - label: About
+  - label: Work
     linkType: internal
-    linkURL: '/about'
-  - label: Projects
+    linkURL: /
+  - label: Hello
     linkType: internal
-    linkURL: '/projects'
-  - label: Dribbble
+    linkURL: /about
+  - label: CV
     linkType: external
-    linkURL: 'https://dribbble.com/ksenia-avdeeva'
+    linkURL: https://kseniaavdeeva.art/cv
 ---
-

@@ -2,43 +2,32 @@
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { jsx } from 'theme-ui';
-import { CustomLink } from 'components/custom-link';
-import { Tag } from 'components/blocks';
+// import { CustomLink } from 'components/custom-link';
+// import { Tag } from 'components/blocks';
 
-const Item = ({ title, tags, image, slug }) => (
-  <figure>
-    <CustomLink linkURL={slug}>
+const Item = ({ title, image }) => (
+  <div sx={{ px: 2, py: 2 }}>
+    {/* <CustomLink linkURL={slug} sx={{ variant: 'styles.projectLink' }}> */}
+    <div sx={{ variant: 'styles.projectLink' }}>
+      <div sx={{ variant: 'styles.projectLinkHover' }}>
+        <p sx={{ color: 'white' }}>{title}</p>
+      </div>
       <Img fluid={image ? image.childImageSharp.fluid : {}} alt={title} />
-      <figcaption>
-        <div
-          sx={{
-            fontSize: [1, 2, 3],
-            fontWeight: 'bold',
-            lineHeight: '1.4em',
-          }}
-        >
-          {title}
-        </div>
-      </figcaption>
-    </CustomLink>
-    <div sx={{ mt: 2 }}>
-      {tags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
     </div>
-  </figure>
+    {/* </CustomLink> */}
+  </div>
 );
 
 Item.propTypes = {
   title: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
+  // tags: PropTypes.arrayOf(PropTypes.string),
   image: PropTypes.shape().isRequired,
-  slug: PropTypes.string.isRequired,
+  // slug: PropTypes.string.isRequired,
 };
 
 Item.defaultProps = {
   title: '',
-  tags: [],
+  // tags: [],
 };
 
 export default Item;

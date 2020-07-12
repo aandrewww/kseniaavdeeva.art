@@ -1,19 +1,18 @@
 import merge from 'deepmerge';
-import typography from './typography';
+import { themedTypography } from './typography';
 import colors from './colors';
 import styles from './styles';
-// import prism from './prism'
 
-export default merge(typography, {
+export default merge(themedTypography, {
   initialColorMode: 'light',
   colors,
   sizes: {
-    container: 768,
-    wide: 1280,
+    container: 1500,
   },
   fonts: {
-    body: 'Montserrat, sans-serif',
-    monospace: 'Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace',
+    body: 'Josefin Sans, sans-serif',
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
   },
   lineHeights: {
     body: 1.625,
@@ -24,8 +23,8 @@ export default merge(typography, {
     heading: 800,
     bold: 700,
   },
-  breakpoints: ['40em', '56em', '64em'],
-  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48, 64, 72, 96],
+  breakpoints: ['768px', '1025px', '1290px'],
+  fontSizes: [12, 14, 16, 18, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   type: {
     heading: {

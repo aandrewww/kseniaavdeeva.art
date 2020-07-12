@@ -9,11 +9,10 @@ import Content, { HTMLContent } from 'components/content';
 
 export const ProjectsPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-  console.log(PageContent);
 
   return (
-    <Container wide>
-      <div sx={{ width: 'wide' }}>
+    <Container container>
+      <div sx={{ width: 'container' }}>
         <PageContent content={content} />
       </div>
     </Container>

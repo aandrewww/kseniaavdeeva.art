@@ -1,14 +1,14 @@
 ---
 templateKey: project-page
-title: Awesome Project
+title: Morning
 date: 2019-01-06T15:04:10.000Z
-description: Мой самый лучший проект ever
-thumbnail: /images/pic2.jpg
+description: Morning
+thumbnail: /images/f2372199515525.5ef46c0b8c825.png
 tags:
   - animation
   - gif
 ---
-![awesome](/images/pic2.jpg "awesome")
+![Morning](/images/f2372199515525.5ef46c0b8c825.png "Morning")
 
 - - -
 

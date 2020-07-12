@@ -1,4 +1,5 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from 'components/layout';
@@ -10,8 +11,8 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <Container wide>
-      <div>
+    <Container>
+      <div sx={{ width: '100%', display: 'flex', maxWidth: 'container', mx: 'auto', px: 3, py: 3 }}>
         <PageContent content={content} />
       </div>
     </Container>

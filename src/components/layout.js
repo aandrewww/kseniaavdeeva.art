@@ -19,10 +19,21 @@ const Layout = ({ data, children }) => (
         },
       }}
     />
-    <div>
+    <div
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
       <Head />
       <Header title={data.site.siteMetadata.siteTitle} navbarData={data.navbarData} />
-      <main>
+      <main
+        sx={{
+          width: '100%',
+          flex: '1 1 auto',
+        }}
+      >
         <div
           sx={{
             display: 'flex',
@@ -82,8 +93,7 @@ const LayoutWithQuery = ({ children }) => (
         }
       }
     `}
-    /* eslint-disable react/jsx-no-bind */
-    render={(data) => <Layout data={data}> {children}</Layout>}
+    render={(data) => <Layout data={data}>{children}</Layout>}
   />
 );
 

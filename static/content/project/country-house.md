@@ -1,13 +1,13 @@
 ---
 templateKey: project-page
-title: Country House
+title: Food
 date: 2019-01-06T13:02:10.000Z
-description: Мой самый лучший проект ever
-thumbnail: /images/pic3.jpg
+description: Food
+thumbnail: /images/c2795c99515525.5ef46c0b8fbe0.png
 tags:
   - graphic
 ---
-![awesome](/images/pic3.jpg "awesome")
+![awesome](/images/c2795c99515525.5ef46c0b8fbe0.png "awesome")
 
 - - -
 

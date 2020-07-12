@@ -1,13 +1,13 @@
 ---
 templateKey: project-page
-title: First Project
+title: Icy Water
 date: 2019-03-06T13:02:10.000Z
-description: Мой самый лучший проект ever
-thumbnail: /images/pic1.jpg
+description: Icy Water
+thumbnail: /images/bb27f799515525.5ef46c0b8ecea.png
 tags:
   - graphic
 ---
-![awesome](/images/pic1.jpg "awesome")
+![water](/images/bb27f799515525.5ef46c0b8ecea.png "water")
 
 - - -
 

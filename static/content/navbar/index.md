@@ -9,5 +9,6 @@ navbarItems:
     linkURL: /about
   - label: CV
     linkType: external
-    linkURL: https://kseniaavdeeva.art/cv
+    linkURL: 'https://kseniaavdeeva.art/cv.pdf'
 ---
+

@@ -11,4 +11,4 @@ I prepare illustrations for animations (appropriate layer division, including pr
 
 
 
-[CV](https://kseniaavdeeva.art/cv) | [Portfolio](https://kseniaavdeeva.art/portfolio)
+[CV](https://kseniaavdeeva.art/cv.pdf) | [Portfolio](https://kseniaavdeeva.art/portfolio.pdf)

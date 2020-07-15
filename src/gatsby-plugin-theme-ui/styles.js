@@ -91,6 +91,9 @@ export default {
     fontWeight: 'bold',
     fontSize: 3,
     marginRight: 3,
+    ':last-child': {
+      marginRight: 0,
+    },
     a: {
       color: 'secondary',
       lineHeight: 1,

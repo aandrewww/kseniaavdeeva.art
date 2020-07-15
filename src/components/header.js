@@ -51,6 +51,7 @@ const Header = ({ navbarData }) => {
         display: 'flex',
         alignItems: 'center',
         maxWidth: 'container',
+        flexDirection: ['column', 'row'],
         mx: 'auto',
         px: 3,
         py: 3,
@@ -71,16 +72,15 @@ const Header = ({ navbarData }) => {
 
       <Navbar data={navbarData} />
 
-      <Switch
-        aria-label="Toggle dark mode"
-        css={css({
-          bg: 'black',
-        })}
-        checkedIcon={checkedIcon}
-        uncheckedIcon={uncheckedIcon}
-        checked={isDark}
-        onChange={toggleColorMode}
-      />
+      <div sx={{ display: 'flex', mt: [3, 0], ml: [0, 3] }}>
+        <Switch
+          aria-label="Toggle dark mode"
+          checkedIcon={checkedIcon}
+          uncheckedIcon={uncheckedIcon}
+          checked={isDark}
+          onChange={toggleColorMode}
+        />
+      </div>
     </header>
   );
 };

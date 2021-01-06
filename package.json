@@ -75,7 +75,7 @@
     "eslint-config-airbnb": "^18.1.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "favicons": "^6.1.0",
-    "lighthouse": "^6.0.0",
+    "lighthouse": "^7.0.0",
     "mkdirp": "^1.0.4",
     "node-gyp": "^7.0.0",
     "prettier": "^2.0.5"

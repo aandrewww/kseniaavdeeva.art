@@ -60,7 +60,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-pose": "^4.0.10",
-    "react-switch": "^5.0.1",
+    "react-switch": "^6.0.0",
     "react-typography": "^0.16.19",
     "theme-ui": "^0.3.1",
     "typography": "^0.16.19",
